@@ -1,0 +1,29 @@
+{
+  "name": "react-native-style-loader",
+  "version": "0.1.0",
+  "description": "the webpack loader that transform css to react native style",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dengchengmi/react-native-style-loader.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "css",
+    "loader"
+  ],
+  "author": "jasonroger chengmi.deng",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dengchengmi/react-native-style-loader/issues"
+  },
+  "homepage": "https://github.com/dengchengmi/react-native-style-loader#readme",
+  "dependencies": {
+    "css-parse": "^2.0.0",
+    "to-camel-case": "^1.0.0"
+  }
+}

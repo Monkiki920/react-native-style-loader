@@ -1,0 +1,11 @@
+.box {
+    font-size: 10px;
+    width: 20vw;
+    height: 12rem;
+    padding: 5pt;
+    border: 1px solid #ccc;
+}
+.box {
+    width: 50px;
+    text-align: center;
+}
