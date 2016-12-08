@@ -1,0 +1,15 @@
+{
+    "box": {
+        "fontSize": 10,
+        "width": 50,
+        "height": "12rem",
+        "paddingTop": "5pt",
+        "paddingBottom": "5pt",
+        "paddingRight": "5pt",
+        "paddingLeft": "5pt",
+        "borderWidth": 1,
+        "borderStyle": "solid",
+        "borderColor": "#ccc",
+        "textAlign": "center"
+    }
+}

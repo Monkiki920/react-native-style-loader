@@ -1,16 +1,14 @@
 var parseCss = require('./lib/parseCss');
 
-var fs = require('fs');
+module.exports = function(source) {
 
-var css = fs.readFileSync('./example/demo.css', 'utf-8');
-
-
-function transform(source) {
     var style = parseCss(source.replace(/\r?\n|\r/g, ""));
 
-    console.log(style);
-    console.log(typeof style)
-}
+    var prefix = "", suffix = "";
+    prefix = "var React = require('react-native');\nmodule.exports = React.StyleSheet.create(";
+    suffix = ");";
+    var content = prefix + style + suffix
+    return content;
+};
 
-transform(css);
 
