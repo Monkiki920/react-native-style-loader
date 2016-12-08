@@ -5,9 +5,15 @@ var firstPack = true;
 
 module.exports = function(source) {
 
+    //create transtorm file
+    if(firstPack) {
+        var transformTpl = fs.readFileSync(__dirname + '/lib/transform.tpl', 'utf-8');
+        this.emitFile('transform.js', transformTpl);
+        firstPack = false;
+    }
+
     //create style
     var style = parseCss(source.replace(/\r?\n|\r/g, ""));
-    
     var content = [
         'var transform = require("./transform.js")',
         'var style = ' + style,
@@ -16,14 +22,7 @@ module.exports = function(source) {
         ''
     ].join(';\n');
     this.emitFile('index.js', content);
-
-    //create transtorm file
-    if(firstPack) {
-        var transformTpl = fs.readFileSync(__dirname + '/lib/transform.tpl', 'utf-8');
-        this.emitFile('transform.js', transformTpl);
-        firstPack = false;
-    }
-
+    
     return '';
 };
 
