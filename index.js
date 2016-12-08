@@ -7,7 +7,7 @@ module.exports = function(source) {
 
     //create style
     var style = parseCss(source.replace(/\r?\n|\r/g, ""));
-    console.log(style)
+    
     var content = [
         'var transform = require("./transform.js")',
         'var style = ' + style,
