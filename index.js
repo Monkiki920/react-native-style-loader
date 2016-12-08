@@ -7,20 +7,21 @@ module.exports = function(source) {
 
     //create transtorm file
     if(firstPack) {
-        var transformTpl = fs.readFileSync(__dirname + '/lib/transform.tpl', 'utf-8');
-        this.emitFile('transform.js', transformTpl);
+        var tpls = [
+            fs.readFileSync(__dirname + '/lib/smartStyleSheet/tools.tpl', 'utf-8'),
+            fs.readFileSync(__dirname + '/lib/smartStyleSheet/SmartStyleSheet.tpl', 'utf-8')
+        ];
+        this.emitFile('SmartStyleSheet.js', tpls.join('\n'));
         firstPack = false;
     }
 
     //create style
     var style = parseCss(source.replace(/\r?\n|\r/g, ""));
     var content = [
-        'var transform = require("./transform.js")',
-        'var style = ' + style,
-        'style = transform(style)',
-        'module.exports = style',
+        'import SmartStyleSheet from "./SmartStyleSheet.js"',
+        'module.exports = SmartStyleSheet.create(' + style + ')',
         ''
-    ].join(';\n');
+    ].join(';\n\n');
     this.emitFile('index.js', content);
     
     return '';

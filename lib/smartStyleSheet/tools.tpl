@@ -102,17 +102,3 @@ function formatStyles(styles = {}) {
     return styles;
 }
 
-/**
- * create the react native style sheet
- * @params styles
- * @return react native styles
- */
-module.exports = function transform(styles) {
-    styles = formatStyles(styles);
-    return StyleSheet.create(styles);
-}
-
-
-
-
-
