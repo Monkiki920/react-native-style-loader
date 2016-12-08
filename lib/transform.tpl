@@ -77,6 +77,8 @@ function calc(value) {
             case 'vh':
                 val = calcVh(val);
                 break;
+            default:
+                val = parseFloat(val);
         }
     } else {
         val = value;
@@ -92,7 +94,7 @@ function calc(value) {
 function formatStyles(styles = {}) {
     Object.keys(styles).forEach(function (key) {
         if(typeof styles[key] === 'object') {
-            return transform(styles[key]);
+            return formatStyles(styles[key]);
         } else if(typeof styles[key] === 'string') {
             styles[key] = calc(styles[key]);
         }
@@ -105,7 +107,7 @@ function formatStyles(styles = {}) {
  * @params styles
  * @return react native styles
  */
-export default function transform(styles) {
+module.exports = function transform(styles) {
     styles = formatStyles(styles);
     return StyleSheet.create(styles);
 }
