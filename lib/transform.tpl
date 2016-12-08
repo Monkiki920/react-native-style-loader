@@ -3,6 +3,7 @@ import {
     PixelRatio
 } from 'react-native';
 import Dimensions from 'Dimensions';
+import NestedStyleSheet from 'react-native-extended-stylesheet';
 
 const { width, height } = Dimensions.get('window');
 const onePxVal = 1 / PixelRatio.get();
@@ -109,7 +110,7 @@ function formatStyles(styles = {}) {
  */
 module.exports = function transform(styles) {
     styles = formatStyles(styles);
-    return StyleSheet.create(styles);
+    return NestedStyleSheet.create(styles);
 }
 
 
