@@ -1,13 +1,14 @@
 # react-native-style-loader
-> 此loader的灵感来自于gulp-react-native-stylesheet-css, 万分感谢该作者.
+此loader的灵感来自于gulp-react-native-stylesheet-css, 万分感谢该作者.
 
 react-native-style-loader 致力于将reanct native中的css从js中分离出来, 其具有以下几个功能
-1. 分离react native中的css
-2. 支持css中的px, vw, vh, rem, pt 单位
-3. 支持媒体查询 @media query
-4. 支持react native stylesheet 的嵌套
-5. 引入less loader后, 还可以支持变量定义等功能
-6. 支持margin, padding, box-shadow等的简写
+
+> 分离react native中的css
+> 支持css中的px, vw, vh, rem, pt 单位
+> 支持媒体查询 @media query
+> 支持react native stylesheet 的嵌套
+> 引入less loader后, 还可以支持变量定义等功能
+> 支持margin, padding, box-shadow等的简写
 
 
 ## Installation
