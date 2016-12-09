@@ -8,8 +8,9 @@ module.exports = function(source) {
     //create transtorm file
     if(firstPack) {
         var tpls = [
-            fs.readFileSync(__dirname + '/lib/smartStyleSheet/tools.tpl', 'utf-8'),
-            fs.readFileSync(__dirname + '/lib/smartStyleSheet/SmartStyleSheet.tpl', 'utf-8')
+            fs.readFileSync(__dirname + '/lib/smartStyleSheet/tools.js', 'utf-8'),
+            fs.readFileSync(__dirname + '/lib/smartStyleSheet/mediaQuery.js', 'utf-8'),
+            fs.readFileSync(__dirname + '/lib/smartStyleSheet/SmartStyleSheet.js', 'utf-8')
         ];
         this.emitFile('SmartStyleSheet.js', tpls.join('\n'));
         firstPack = false;
