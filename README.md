@@ -1,4 +1,4 @@
-# react-native-style-loader
+# react-native-style-loader ![NPM version](https://img.shields.io/npm/v/react-native-style-loader.svg?style=flat)
 此loader的灵感来自于gulp-react-native-stylesheet-css, 万分感谢该作者.
 
 react-native-style-loader 致力于将reanct native中的css从js中分离出来, 其具有以下几个功能
