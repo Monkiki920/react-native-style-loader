@@ -1,6 +1,6 @@
 {
   "name": "react-native-style-loader",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "the webpack loader that transform css to react native style",
   "main": "index.js",
   "scripts": {
