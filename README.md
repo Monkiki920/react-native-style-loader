@@ -28,6 +28,7 @@ within the webpack config:
 //webpack.config.js
 // 启动命令 webpack --config webpack.config.js -w
 
+//webpack 1
 module.exports = {
     entry: './src/less/index.less',
     output: {
@@ -41,6 +42,31 @@ module.exports = {
         }]
     }
 };
+
+//webpack 2
+var path = require('path');
+
+module.exports = {
+    entry: './src/less/index.less',
+    output: {
+        filename: 'tmp.js',
+        path: path.resolve(__dirname, './src/styles')
+    },
+    module: {
+        rules: [{
+            test: /\.less$/,
+            use: [
+                {
+                    loader: 'react-native-style-loader'
+                },
+                {
+                    loader: 'less-loader'
+                }
+            ]
+        }]
+    }
+};
+
 ```
 然后你就可以在js 中这样引入了
 ```js
@@ -129,6 +155,3 @@ padding | 2px<br />2px 4px<br />3px 1px 5px<br />1px 3px 2px 6px |
 box-shadow | none<br />0 2px 4px rgba(52, 21, 23, 0.32) | Inset shadows and spread values are not supported.
 flex | 1<br />1 30px<br />1 2 10% | __Only the first value will be output__ and the rest will be ignored, as React Native does not support flex-basis or flex-shrink.
 transform | perspective(90)<br />rotate(10deg)<br />rotateX(5deg)<br />rotateY(10deg)<br />rotateZ(15deg)<br />rotate3d(5deg, 10deg, 15deg)<br />scale(1.2)<br />scaleX(1.5)<br />scaleY(0.5)<br />scale2d(1.5, 0.5) or scale3d(1.5, 0.5)<br />translateX(5px)<br />translateY(10px)<br />translate2d(5px, 10px) or translate3d(5px, 10px) | You may chain multiple transformations together with a space delimiter, like in CSS3 (see example above).
-
-
-
