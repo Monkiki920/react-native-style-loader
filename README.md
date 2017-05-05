@@ -15,6 +15,7 @@ react-native-style-loader 致力于将reanct native中的css从js中分离出来
 
 > 支持margin, padding, box-shadow等的简写
 
+> class和id的驼峰化
 
 ## Installation
 ```bash
@@ -114,6 +115,11 @@ html {
         height: 20pt;
         background: green;
     }
+    .m-box {
+        width: 50rem;
+        height: 20pt;
+        background: green;
+    }
 }
 ```
 
@@ -127,6 +133,16 @@ html {
             backgroundColor: orange;
         }
         box1: {
+            width: 50;
+            height: 20;
+            backgroundColor: green;
+        }
+        "m-box": {
+            width: 50;
+            height: 20;
+            backgroundColor: green;
+        }
+        mBox: {
             width: 50;
             height: 20;
             backgroundColor: green;
