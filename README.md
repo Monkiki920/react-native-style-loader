@@ -17,7 +17,7 @@ react-native-style-loader 致力于将reanct native中的css从js中分离出来
 
 > class和id的驼峰化
 
-> 支持calc eg: cacl(~'100vh - 49pt')
+> 支持calc eg: calc(~'100vh - 49pt')
 
 ## Installation
 ```bash
